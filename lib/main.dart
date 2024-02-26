@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:list/Folder/Button_styles/app_bar_colors.dart';
 import 'package:list/main_screen/main_sreen_widget.dart';
 import 'package:list/widets/auth/auth_widget.dart';
 
@@ -15,7 +16,12 @@ class MyApp extends StatelessWidget {
       title:  'Flutter Demo',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(backgroundColor:  Color.fromRGBO(3, 37, 65, 1)),
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.blue,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: AppClors.mindarkBlue,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey
+        ),
       ),
       routes: {
         "/":(context) => AuthWidget(),
