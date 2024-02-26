@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:list/main_screen/main_sreen_widget.dart';
 import 'package:list/widets/auth/auth_widget.dart';
 
 void main() {
@@ -16,7 +17,17 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(backgroundColor:  Color.fromRGBO(3, 37, 65, 1)),
         primarySwatch: Colors.blue
       ),
-      home: AuthWidget(),
+      routes: {
+        "/":(context) => AuthWidget(),
+        "/main_screen":(context) => MianScreenWidget(),
+
+      },
+      initialRoute: "/",
+      onGenerateRoute: (RouteSettings setting){
+        return MaterialPageRoute(builder: (context) {
+          return const Text("dd111");
+        });
+      },
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:list/Folder/Button_styles/app_button_style.dart';
+import 'package:list/main_screen/main_sreen_widget.dart';
 
 class AuthWidget extends StatefulWidget {
   const AuthWidget({super.key});
@@ -95,7 +96,7 @@ class _FormAuthWidgetState extends State<FormAuthWidget> {
     final password = _passwordController.text;
     if (login == 'admin' && password == 'admin') {
       ErrorText = null;
-      print("Open App");
+      Navigator.of(context).pushNamed("/main_screen");
     } else {
       ErrorText = "Error";
       return print("show error");
@@ -120,7 +121,7 @@ class _FormAuthWidgetState extends State<FormAuthWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (ErrorText != null) ...[
+        if (ErrorText != null)...[
           Text(
             "$ErrorText",
             style: const TextStyle(color: Colors.redAccent, fontSize: 17),
@@ -171,7 +172,11 @@ class _FormAuthWidgetState extends State<FormAuthWidget> {
                   foregroundColor: MaterialStatePropertyAll(Colors.white),
                   padding: MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 15.0,vertical: 8.0)),
                 ),
-                onPressed: _auth,
+                onPressed: (){
+                  setState(() {
+                    _auth();
+                  });
+                },
                 child: const Text('Login')),
             const SizedBox(width: 30),
             TextButton(
