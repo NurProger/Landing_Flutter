@@ -17,16 +17,16 @@ class _MianScreenWidgetState extends State<MianScreenWidget> {
     _currentIndex = index;
     });
   }
-  List _listPages = [
-    Text("News"),
-    Text("Films"),
-    Text("Serials")
+  final List _listPages = [
+    const Text("Films"),
+    const Text("News"),
+    const Text("Serials")
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TMDB", style: TextStyle(color: Colors.white),),
+        title: const Text("TMDB", style: TextStyle(color: Colors.white),),
         backgroundColor: AppClors.mindarkBlue,
       ),
       body: Center(

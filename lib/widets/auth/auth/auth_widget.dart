@@ -138,8 +138,11 @@ class _FormAuthWidgetState extends State<FormAuthWidget> {
           height: 5,
         ),
         TextField(
-          decoration: decorForTextField,
           controller: _loginController,
+          decoration: InputDecoration(
+
+          ),
+
         ),
         const Text(
           "Password",
