@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:list/Folder/Button_styles/app_bar_colors.dart';
-import 'package:list/main_screen/main_sreen_widget.dart';
-import 'package:list/widets/auth/auth_widget.dart';
+import 'package:list/widets/auth/main_screen/main_sreen_widget.dart';
+import 'package:list/widets/auth/auth/auth_widget.dart';
+import 'package:list/widets/auth/movie_details/movie_details_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,14 @@ class MyApp extends StatelessWidget {
       routes: {
         "/":(context) => AuthWidget(),
         "/main_screen":(context) => MianScreenWidget(),
+        "/main_screen/movie_details":(context) {
+          final id = ModalRoute.of(context)?.settings.arguments;
+          if(id is int){
+            return MovieDetailsWidget(movieId: id);
+          }else{
+            return MovieDetailsWidget(movieId: 0);
+          }
+        },
 
       },
       initialRoute: "/",

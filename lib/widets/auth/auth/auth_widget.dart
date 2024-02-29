@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:list/Folder/Button_styles/app_button_style.dart';
-import 'package:list/main_screen/main_sreen_widget.dart';
+import 'package:list/widets/auth/main_screen/main_sreen_widget.dart';
 
 class AuthWidget extends StatefulWidget {
   const AuthWidget({super.key});
@@ -139,9 +139,7 @@ class _FormAuthWidgetState extends State<FormAuthWidget> {
         ),
         TextField(
           controller: _loginController,
-          decoration: InputDecoration(
-
-          ),
+          decoration: decorForTextField
 
         ),
         const Text(

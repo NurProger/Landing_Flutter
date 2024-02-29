@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:list/Folder/Button_styles/app_bar_colors.dart';
+import 'package:list/widets/auth/move_list/move_list_widget.dart';
 
 class MianScreenWidget extends StatefulWidget {
   const MianScreenWidget({super.key});
@@ -9,7 +10,7 @@ class MianScreenWidget extends StatefulWidget {
 }
 
 class _MianScreenWidgetState extends State<MianScreenWidget> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   void onSelectedTab(int index){
   if(_currentIndex == index) return;
@@ -17,11 +18,6 @@ class _MianScreenWidgetState extends State<MianScreenWidget> {
     _currentIndex = index;
     });
   }
-  final List _listPages = [
-    const Text("Films"),
-    const Text("News"),
-    const Text("Serials")
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +26,14 @@ class _MianScreenWidgetState extends State<MianScreenWidget> {
         backgroundColor: AppClors.mindarkBlue,
       ),
       body: Center(
-        child: _listPages[_currentIndex],
+        child: IndexedStack(
+          index: _currentIndex,
+          children: [
+            const Text("News"),
+            MoveListWidget(),
+            const Text("Serials")
+          ],
+        ),
       ),
 
       bottomNavigationBar: BottomNavigationBar(
