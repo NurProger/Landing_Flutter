@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:list/widets/auth/movie_details/movie_details_main_info_widget.dart';
+import 'package:list/widets/auth/movie_details/movie_details_main_screen_cast_widget..dart';
 
 import '../../../Folder/Button_styles/app_bar_colors.dart';
 
@@ -23,7 +24,9 @@ class _MovieDetailsWidgetState extends State<MovieDetailsWidget> {
         color: Color.fromRGBO(24, 23, 27, 1.0),
         child: ListView(
           children: [
-                MovieDetailsMainInfoWidget()
+                MovieDetailsMainInfoWidget(),
+            SizedBox(height: 10,),
+            MovieDetailsMainScreenCastWidget(),
           ],
         ),
       ),
