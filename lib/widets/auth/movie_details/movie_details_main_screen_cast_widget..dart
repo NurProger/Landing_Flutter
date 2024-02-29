@@ -16,7 +16,7 @@ class MovieDetailsMainScreenCastWidget extends StatelessWidget {
             fontWeight: FontWeight.w700),),
           ),
           SizedBox(
-            height: 400,
+            height: 350,
             child: Scrollbar(
               controller: _scroll,
               thumbVisibility: true,
@@ -24,7 +24,7 @@ class MovieDetailsMainScreenCastWidget extends StatelessWidget {
                 controller: _scroll,
                 scrollDirection: Axis.horizontal,
                 itemCount: 20,
-                  itemExtent: 130,
+                  itemExtent: 160,
                   itemBuilder: (BuildContext context , int index){
                         return Padding(
                           padding: const EdgeInsets.all(8.0),

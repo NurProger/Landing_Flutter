@@ -61,14 +61,6 @@ class _TopPostersWidget extends StatelessWidget {
     return Stack(
       children: [
         Image.asset('/topHeader.jpg'),
-        Padding(
-          padding: const EdgeInsets.only(left: 20, top: 20 , bottom: 20,right: 8.0),
-          child: Container(
-              width: 130,
-              height: 180,
-              child: Image.asset('/actor.jpg',fit: BoxFit.cover,)
-          ),
-        ),
       ],
     );
   }
@@ -126,7 +118,7 @@ class _SummeryWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 70.0,vertical: 10),
         child: Text(
-            "R, 04/29/2021 (US) 1h49m Action, Adventure, Thriller, War",
+            "R 04/29/2021 (US) 1h49m Action, Adventure, Thriller, War",
             maxLines: 3,
             textAlign: TextAlign.center,
             style: TextStyle(
